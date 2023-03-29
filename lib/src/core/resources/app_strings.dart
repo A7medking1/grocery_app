@@ -22,6 +22,19 @@ class AppStrings {
   static const String description3 = 'Order is arrived at your Place';
 
 
+  /// login & sign up
+
+  static const String desc=  'Buy Your Daily Needs';
+  static const String email=  'Email Address';
+  static const String password=  'Password';
+  static const String forgetPassword=  'Forget Password ?';
+  static const String signIn=  'SIGN IN';
+  static const String noAccount=  'Don\'t Have Account ?';
+  static const String signUp=  'SIGN UP';
+  static const String createNewAccount = 'Create New Account';
+  static const String descCreateNewAccount = 'Enter Your Details To Create Account';
+  static const String name = 'Name';
+  static const String orSignUpWith = 'Or Sign Up With';
 
 
 

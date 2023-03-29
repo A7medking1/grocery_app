@@ -12,8 +12,8 @@ class AppAssets {
 
 
    /// image
-   static const String splash = '$_image/splash.jpg';
-   static const String splash1 = '$_image/splash1.png';
+   static const String splash = '$_image/splash.png';
+   static const String fresh = '$_image/fresh1.png';
 
 
 

@@ -1,13 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grocery_app/src/core/app_prefs/app_prefs.dart';
 import 'package:grocery_app/src/core/resources/app_assets.dart';
 import 'package:grocery_app/src/core/resources/app_colors.dart';
 import 'package:grocery_app/src/core/resources/app_strings.dart';
+import 'package:grocery_app/src/core/resources/routes_manager.dart';
 import 'package:grocery_app/src/core/services_locator/services_locator.dart';
-import 'package:grocery_app/src/on_boarding/presentation/screen/on_boarding_screen.dart';
-import 'package:grocery_app/test.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -22,18 +23,16 @@ class _SplashScreenState extends State<SplashScreen> {
   Timer? _timer;
 
   _startDelay() {
-    _timer = Timer(const Duration(seconds: 3), () => _goNext());
+    _timer = Timer(const Duration(seconds: 1), () => _goNext());
   }
 
   _goNext() {
     _preferences.isOnBoardingInPrefs().then((value) {
       print(value);
       if (value) {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (_) => const Test()));
+        context.goNamed(Routes.login);
       } else {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (_) => const OnBoardingScreen()));
+        context.goNamed(Routes.onBoarding);
       }
     });
   }
@@ -76,7 +75,7 @@ class _SplashScreenState extends State<SplashScreen> {
           //color: Colors.white,
           image: DecorationImage(
               image: AssetImage(
-                AppAssets.splash1,
+                AppAssets.splash,
               ),
               fit: BoxFit.cover),
         ),
