@@ -1,8 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grocery_app/src/core/app_prefs/app_prefs.dart';
 import 'package:grocery_app/src/core/presentation/widget/custom_text_button.dart';
 import 'package:grocery_app/src/core/resources/app_strings.dart';
+import 'package:grocery_app/src/core/resources/routes_manager.dart';
 import 'package:grocery_app/src/core/services_locator/services_locator.dart';
 import 'package:grocery_app/src/on_boarding/presentation/widget/page_view_builder.dart';
 
@@ -11,7 +14,7 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  AnnotatedRegion<SystemUiOverlayStyle>(
+    return  const AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.dark,
       child: Scaffold(
         body: _OnBoardingScreenContent(),
@@ -21,13 +24,7 @@ class OnBoardingScreen extends StatelessWidget {
 }
 
 class _OnBoardingScreenContent extends StatelessWidget {
-   _OnBoardingScreenContent({Key? key}) : super(key: key);
-
-  final AppPreferences _preferences = sl<AppPreferences>();
-
-  void _submit(){
-    _preferences.setOnBoarding();
-  }
+   const _OnBoardingScreenContent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +38,10 @@ class _OnBoardingScreenContent extends StatelessWidget {
             children: [
               CustomTextButton(
                 text: AppStrings.skip,
-                onPressed: () => _submit(),
+                onPressed: () {
+                  sl<AppPreferences>().setOnBoarding();
+                  context.goNamed(Routes.login);
+                },
               ),
             ],
           ),

@@ -12,11 +12,9 @@ class AppStrings {
 
   static const String btnNext = 'Next';
   static const String btnGetStarted = 'Get Started';
-
   static const String title1 = 'E Shopping';
   static const String title2 = 'Delivery on the way';
   static const String title3 = 'Delivery Arrived';
-
   static const String description1 = 'Explore  top organic fruits & grab the';
   static const String description2 = 'Get your order by speed delivery';
   static const String description3 = 'Order is arrived at your Place';
@@ -35,6 +33,7 @@ class AppStrings {
   static const String descCreateNewAccount = 'Enter Your Details To Create Account';
   static const String name = 'Name';
   static const String orSignUpWith = 'Or Sign Up With';
+  static const String logInWith = 'Log In With';
 
 
 
