@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grocery_app/src/auth/presentation/controller/auth_bloc.dart';
+import 'package:grocery_app/src/auth/presentation/screens/validator_form.dart';
 import 'package:grocery_app/src/core/presentation/widget/custom_text_formField.dart';
 import 'package:grocery_app/src/core/resources/app_strings.dart';
 
-class InputFieldBuild extends StatelessWidget {
+class InputFieldBuild extends StatelessWidget  with Validator{
   const InputFieldBuild({
     super.key,
   });
@@ -16,6 +17,7 @@ class InputFieldBuild extends StatelessWidget {
       children: [
         CustomTextFormField(
           controller: bloc.userName,
+          validator: (value) => validateName(value),
           labelText: AppStrings.name,
           textInputType: TextInputType.name,
           prefixIcon: const Icon(Icons.person),
@@ -26,6 +28,7 @@ class InputFieldBuild extends StatelessWidget {
         CustomTextFormField(
           controller: bloc.email,
           labelText: AppStrings.email,
+          validator: (value)=>validateEmail(value),
           textInputType: TextInputType.emailAddress,
           prefixIcon: const Icon(Icons.email_outlined),
         ),
@@ -35,6 +38,7 @@ class InputFieldBuild extends StatelessWidget {
         CustomTextFormField(
           controller: bloc.password,
           labelText: AppStrings.password,
+          validator: (value) => validatePassword(value),
           textInputType: TextInputType.visiblePassword,
           suffixIcon: const Icon(Icons.visibility_outlined),
           prefixIcon: const Icon(Icons.key),

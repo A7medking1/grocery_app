@@ -3,6 +3,7 @@ part of 'auth_bloc.dart';
 class AuthState extends Equatable {
   final AuthRequestState logInState;
   final AuthRequestState signUpSate;
+  final UserCredential? user;
   final String message;
   final bool loading;
 
@@ -10,6 +11,7 @@ class AuthState extends Equatable {
     this.logInState = AuthRequestState.loading,
     this.message = '',
     this.loading = false,
+    this.user ,
     this.signUpSate= AuthRequestState.loading,
   });
 
@@ -17,6 +19,7 @@ class AuthState extends Equatable {
     AuthRequestState? logInState,
     AuthRequestState? signUpSate,
     String? message,
+    UserCredential? user ,
     bool? loading,
   }) {
     return AuthState(
@@ -24,9 +27,10 @@ class AuthState extends Equatable {
       signUpSate: signUpSate ?? this.signUpSate,
       message: message ?? this.message,
       loading: loading ?? this.loading,
+      user: user ?? this.user,
     );
   }
 
   @override
-  List<Object> get props => [signUpSate,logInState, message, loading];
+  List<Object?> get props => [user,signUpSate,logInState, message, loading];
 }

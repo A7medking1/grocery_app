@@ -26,8 +26,12 @@ class AppPreferences {
     await _sharedPreferences.setString(token, userToken);
   }
 
-  Future<String> isUserLoggedIn() async {
+  String getUserToken()  {
     return _sharedPreferences.getString(token) ?? '';
+  }
+
+  Future<bool> isUserLoggedIn() async {
+    return _sharedPreferences.containsKey(token);
   }
 
   Future<bool> removeUserToken() async {

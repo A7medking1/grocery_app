@@ -38,42 +38,45 @@ class _SignUpScreenContent extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 20),
       child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            Text(
-              AppStrings.createNewAccount,
-              style: TextStyle(fontSize: 22),
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Text(
-              AppStrings.descCreateNewAccount,
-              style: TextStyle(fontSize: 18, color: Colors.grey),
-            ),
-            SizedBox(
-              height: 70,
-            ),
-            InputFieldBuild(),
-            SizedBox(
-              height: 40,
-            ),
-            SignUpButton(),
-            SizedBox(
-              height: 50,
-            ),
-            Text(
-              AppStrings.orSignUpWith,
-              style: TextStyle(
-                fontSize: 18,
+        child: Form(
+          key: context.read<AuthBloc>().signUpFormKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              Text(
+                AppStrings.createNewAccount,
+                style: TextStyle(fontSize: 22),
               ),
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            SocialButtonsBuild()
-          ],
+              SizedBox(
+                height: 8,
+              ),
+              Text(
+                AppStrings.descCreateNewAccount,
+                style: TextStyle(fontSize: 18, color: Colors.grey),
+              ),
+              SizedBox(
+                height: 70,
+              ),
+              InputFieldBuild(),
+              SizedBox(
+                height: 40,
+              ),
+              SignUpButton(),
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                AppStrings.orSignUpWith,
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              SocialButtonsBuild()
+            ],
+          ),
         ),
       ),
     );

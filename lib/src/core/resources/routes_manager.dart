@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:grocery_app/src/auth/presentation/screens/login/login_screen.dart';
 import 'package:grocery_app/src/auth/presentation/screens/sign_up/sign_up_screen.dart';
+import 'package:grocery_app/src/core/presentation/screen/main_home_screen.dart';
 import 'package:grocery_app/src/on_boarding/presentation/screen/on_boarding_screen.dart';
 import 'package:grocery_app/src/on_boarding/splash_screen.dart';
 import 'package:grocery_app/test.dart';
@@ -11,6 +12,7 @@ class Routes {
   static const login = 'login';
   static const signUp = 'signUp';
   static const test = 'test';
+  static const homeScreen = 'homeScreen';
 }
 
 class RouterPath {
@@ -19,6 +21,7 @@ class RouterPath {
   static const login = '/login';
   static const signUp = 'signUp';
   static const test = '/test';
+  static const homeScreen = '/homeScreen';
 }
 
 class AppRouter {
@@ -50,6 +53,11 @@ class AppRouter {
         name: Routes.test,
         path: RouterPath.test,
         builder: (context, state) => const Test(),
+      ),
+      GoRoute(
+        name: Routes.homeScreen,
+        path: RouterPath.homeScreen,
+        builder: (context, state) => const HomeScreen(),
       ),
     ],
   );

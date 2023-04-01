@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grocery_app/src/core/app_prefs/app_prefs.dart';
 import 'package:grocery_app/src/core/presentation/widget/custom_button.dart';
 import 'package:grocery_app/src/core/resources/app_strings.dart';
+import 'package:grocery_app/src/core/resources/routes_manager.dart';
 import 'package:grocery_app/src/core/services_locator/services_locator.dart';
 import 'package:grocery_app/src/on_boarding/model/on_boarding_model.dart';
 import 'package:grocery_app/src/on_boarding/presentation/widget/indicator_pageView.dart';
@@ -67,7 +69,8 @@ class _PageViewBuilderState extends State<PageViewBuilder> {
               onTap: () {
                 if (isLastPage) {
                   sl<AppPreferences>().setOnBoarding();
-                  Navigator.push(context, MaterialPageRoute(builder: (_)=> const Test()));
+               //   Navigator.push(context, MaterialPageRoute(builder: (_)=> const Test()));
+                  context.goNamed(Routes.login);
                 } else {
                   pageController.nextPage(
                     duration: const Duration(milliseconds: 750),

@@ -43,7 +43,7 @@ class _LoginScreenContent extends StatelessWidget {
         padding: const EdgeInsetsDirectional.symmetric(horizontal: 20),
         child: SingleChildScrollView(
           child: Form(
-            key: bloc.formKey,
+            key: bloc.loginFormKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [

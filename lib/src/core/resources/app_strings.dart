@@ -35,6 +35,15 @@ class AppStrings {
   static const String orSignUpWith = 'Or Sign Up With';
   static const String logInWith = 'Log In With';
 
+  static const String emailRequired = 'Email is required';
+  static const String passwordRequired = 'Password is required';
+  static const String nameRequired = 'Name is required';
+  static const String emailValidMessage = 'Please enter a valid email';
+  static const String passwordValidMessage = 'Password must be at least 6 characters';
+  static const String createAccountMessage = 'Create Account Successfully';
+
+
+
 
 
 }

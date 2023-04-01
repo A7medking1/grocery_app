@@ -9,7 +9,6 @@ import 'package:grocery_app/src/core/resources/app_strings.dart';
 import 'package:grocery_app/src/core/resources/routes_manager.dart';
 import 'package:grocery_app/src/core/services_locator/services_locator.dart';
 
-
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -27,14 +26,21 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _goNext() {
-    _preferences.isOnBoardingInPrefs().then((value) {
-      print(value);
-      if (value) {
-        context.goNamed(Routes.login);
-      } else {
-        context.goNamed(Routes.onBoarding);
-      }
-    });
+    _preferences.isUserLoggedIn().then(
+      (value) {
+        if (value) {
+          context.goNamed(Routes.homeScreen);
+        } else {
+          _preferences.isOnBoardingInPrefs().then((value) {
+            if (value) {
+              context.goNamed(Routes.login);
+            } else {
+              context.goNamed(Routes.onBoarding);
+            }
+          });
+        }
+      },
+    );
   }
 
   @override

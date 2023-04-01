@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:grocery_app/src/auth/domain/use_cases/login_use_case.dart';
 
@@ -29,7 +30,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
   final TextEditingController userName = TextEditingController();
-  final formKey = GlobalKey<FormState>();
+  GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  GlobalKey<FormState> signUpFormKey = GlobalKey<FormState>();
 
   FutureOr<void> _logIn(LogInEvent event, Emitter<AuthState> emit) async {
     emit(
@@ -53,6 +55,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       (r) => emit(
         state.copyWith(
           logInState: AuthRequestState.success,
+          user: r,
           loading: false,
         ),
       ),
@@ -82,6 +85,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         state.copyWith(
           signUpSate: AuthRequestState.success,
           loading: false,
+          user: r,
         ),
       ),
     );
