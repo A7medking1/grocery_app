@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextButton extends StatelessWidget {
@@ -26,7 +27,7 @@ class CustomTextButton extends StatelessWidget {
           color: fontColor,
           fontSize: fontSize,
         ),
-      ),
+      ).tr(),
     );
   }
 }

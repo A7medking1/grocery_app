@@ -27,6 +27,9 @@ dependencies:
   cloud_firestore: ^4.5.0
   firebase_core: ^2.9.0
   firebase_auth: ^4.4.0
+  flutter_screenutil: ^5.7.0
+  easy_localization: ^3.0.1
+  flutter_phoenix: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -43,6 +46,8 @@ flutter:
   assets:
     - assets/images/
     - assets/svg/
+    - assets/translations/ar-SA.json
+    - assets/translations/en-US.json
 
 
   # example:

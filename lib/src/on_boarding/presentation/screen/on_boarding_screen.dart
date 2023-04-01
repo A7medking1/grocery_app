@@ -1,4 +1,5 @@
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -37,7 +38,7 @@ class _OnBoardingScreenContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               CustomTextButton(
-                text: AppStrings.skip,
+                text: AppStrings.skip.tr(),
                 onPressed: () {
                   sl<AppPreferences>().setOnBoarding();
                   context.goNamed(Routes.login);

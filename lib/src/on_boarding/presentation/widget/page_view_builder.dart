@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -78,7 +79,7 @@ class _PageViewBuilderState extends State<PageViewBuilder> {
                   );
                 }
               },
-              text: !isLastPage ? AppStrings.btnNext : AppStrings.btnGetStarted,
+              text: !isLastPage ? AppStrings.btnNext.tr() : AppStrings.btnGetStarted.tr(),
             ),
           ],
         ),
@@ -108,14 +109,14 @@ class PageViewWidget extends StatelessWidget {
           height: 60,
         ),
         Text(
-          model.title,
+          model.title.tr(),
           style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
         const SizedBox(
           height: 30,
         ),
         Text(
-          model.desc,
+          model.desc.tr(),
           style: const TextStyle(fontSize: 18, color: Colors.black87),
         ),
       ],

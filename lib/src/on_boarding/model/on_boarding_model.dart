@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:equatable/equatable.dart';
 import 'package:grocery_app/src/core/resources/app_assets.dart';
 import 'package:grocery_app/src/core/resources/app_strings.dart';
@@ -17,20 +18,20 @@ class OnBoardingModel extends Equatable {
   List<Object> get props => [image, title, desc];
 }
 
-List<OnBoardingModel> items = const [
+List<OnBoardingModel> items =  [
   OnBoardingModel(
     image: AppAssets.onBoarding1,
-    title: AppStrings.title1,
-    desc: AppStrings.description1,
+    title: AppStrings.title1.tr(),
+    desc: AppStrings.description1.tr(),
   ),
   OnBoardingModel(
     image: AppAssets.onBoarding2,
-    title: AppStrings.title2,
-    desc: AppStrings.description2,
+    title: AppStrings.title2.tr(),
+    desc: AppStrings.description2.tr(),
   ),
   OnBoardingModel(
     image: AppAssets.onBoarding1,
-    title: AppStrings.title3,
-    desc: AppStrings.description3,
+    title: AppStrings.title3.tr(),
+    desc: AppStrings.description3.tr(),
   ),
 ];
