@@ -7,5 +7,27 @@
   "title3": "Delivery Arrived",
   "desc1": "Explore  top organic fruits & grab the",
   "desc2": "Get your order by speed delivery",
-  "desc3": "Order is arrived at your Place"
+  "desc3": "Order is arrived at your Place",
+  "desc_login": "Buy Your Daily Needs",
+  "email":  "Email Address",
+  "password":  "Password",
+  "forget_password":  "Forget Password ?",
+  "sign_in":  "SIGN IN",
+  "no_account":  "Don\"t Have Account ?",
+  "sign_up":  "SIGN UP",
+  "create_new_account" : "Create New Account",
+  "desc_create_new_account" : "Enter Your Details To Create Account",
+  "name" : "Name",
+  "or_sign_up_with" : "Or Sign Up With",
+  "log_in_with" : "Log In With",
+  "email_required" : "Email is required",
+  "password_required" : "Password is required",
+  "name_required" : "Name is required",
+  "email_valid_message" : "Please enter a valid email",
+  "password_valid_message" : "Password must be at least 6 characters",
+  "create_account_message" : "Create Account Successfully",
+  "log_in_successfully":"LOGIN SUCCESSFULLY"
+
 }
+
+

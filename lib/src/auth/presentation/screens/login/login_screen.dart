@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grocery_app/src/auth/presentation/controller/auth_bloc.dart';
 import 'package:grocery_app/src/auth/presentation/screens/login/widget/build_form_field.dart';
@@ -37,10 +39,9 @@ class _LoginScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = context.read<AuthBloc>();
-
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsetsDirectional.symmetric(horizontal: 20),
+        padding:  EdgeInsetsDirectional.symmetric(horizontal: 20.w),
         child: SingleChildScrollView(
           child: Form(
             key: bloc.loginFormKey,
@@ -51,7 +52,7 @@ class _LoginScreenContent extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   children: [
                     SizedBox(
-                      height: 250,
+                      height: 250.h,
                       width: double.infinity,
                       //color: Colors.green,
                       child: Image.asset(
@@ -59,7 +60,7 @@ class _LoginScreenContent extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      AppStrings.desc,
+                      AppStrings.desc.tr(),
                       style: Theme
                           .of(context)
                           .textTheme
@@ -67,37 +68,37 @@ class _LoginScreenContent extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 50,
+                 SizedBox(
+                  height: 50.h,
                 ),
                 const InputFieldBuild(),
-                const SizedBox(
-                  height: 20,
+                 SizedBox(
+                  height: 20.h,
                 ),
                 Align(
                   alignment: AlignmentDirectional.centerStart,
                   child: CustomTextButton(
-                    text: AppStrings.forgetPassword,
-                    fontSize: 14,
+                    text: AppStrings.forgetPassword.tr(),
+                    fontSize: 14.sp,
                     fontColor: Colors.grey,
                     onPressed: () {},
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                 SizedBox(
+                  height: 20.h,
                 ),
                 const SignInButton(),
-                const SizedBox(
-                  height: 30,
+                 SizedBox(
+                  height: 30.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      AppStrings.noAccount,
+                     Text(
+                      AppStrings.noAccount.tr(),
                     ),
                     CustomTextButton(
-                      text: AppStrings.signUp,
+                      text: AppStrings.signUp.tr(),
                       onPressed: () => context.goNamed(Routes.signUp),
                       fontColor: AppColors.green,
                     ),

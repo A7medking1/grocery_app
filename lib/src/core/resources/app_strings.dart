@@ -7,16 +7,6 @@ class AppStrings {
 
   static const String fruitMarket = 'Fruit Market';
 
- /* {
-  "next": "التالي",
-  "get_started": "ابدآ آلان",
-  "title1": "E Shopping",
-  "title2": "التسليم في الطريق",
-  "title3": "وصل التسليم",
-  "desc1": "استكشف أفضل الفواكه العضوية ",
-  "desc2": "احصل على طلبك عن طريق التسليم السريع",
-  "desc3": "توصيل الطلب إلى مكانك"
-  }*/
   /// on boarding
 
   static const String btnNext = 'next';
@@ -31,40 +21,29 @@ class AppStrings {
 
   /// login & sign up
 
-  static const String desc=  'Buy Your Daily Needs';
-  static const String email=  'Email Address';
-  static const String password=  'Password';
-  static const String forgetPassword=  'Forget Password ?';
-  static const String signIn=  'SIGN IN';
-  static const String noAccount=  'Don\'t Have Account ?';
-  static const String signUp=  'SIGN UP';
-  static const String createNewAccount = 'Create New Account';
-  static const String descCreateNewAccount = 'Enter Your Details To Create Account';
-  static const String name = 'Name';
-  static const String orSignUpWith = 'Or Sign Up With';
-  static const String logInWith = 'Log In With';
+  static const String desc=  'desc_login';
+  static const String email=  'email';
+  static const String password=  'password';
+  static const String forgetPassword=  'forget_password';
+  static const String signIn=  'sign_in';
+  static const String noAccount=  'no_account';
+  static const String signUp=  'sign_up';
+  static const String createNewAccount = 'create_new_account';
+  static const String descCreateNewAccount = 'desc_create_new_account';
+  static const String name = 'name';
+  static const String orSignUpWith = 'or_sign_up_with';
+  static const String logInWith = 'log_in_with';
 
-  static const String emailRequired = 'Email is required';
-  static const String passwordRequired = 'Password is required';
-  static const String nameRequired = 'Name is required';
-  static const String emailValidMessage = 'Please enter a valid email';
-  static const String passwordValidMessage = 'Password must be at least 6 characters';
-  static const String createAccountMessage = 'Create Account Successfully';
+  static const String emailRequired = 'email_required';
+  static const String passwordRequired = 'password_required';
+  static const String nameRequired = 'name_required';
+  static const String emailValidMessage = 'email_valid_message';
+  static const String passwordValidMessage = 'password_valid_message';
+  static const String createAccountMessage = 'create_account_message';
+  static const String logInSuccessfully = 'log_in_successfully';
 
 
 
 
 
 }
-
-
-/*
-E Shopping
-Explore  top organic fruits & grab them
-
-Delivery on the way
-Get your order by speed delivery
-
-Delivery Arrived
-Order is arrived at your Place
-*/

@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grocery_app/src/auth/presentation/controller/auth_bloc.dart';
 import 'package:grocery_app/src/core/app_prefs/app_prefs.dart';
@@ -33,12 +35,12 @@ class SignUpButton extends StatelessWidget {
       builder: (context, state) {
         return !state.loading
             ? Container(
-                padding: const EdgeInsetsDirectional.symmetric(horizontal: 50),
+                padding:  EdgeInsetsDirectional.symmetric(horizontal: 50.w),
                 decoration: BoxDecoration(
                     color: AppColors.green,
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius: BorderRadius.circular(20.r)),
                 child: CustomTextButton(
-                  text: AppStrings.signUp,
+                  text: AppStrings.signUp.tr(),
                   fontColor: Colors.white,
                   onPressed: () {
                     if (bloc.signUpFormKey.currentState!.validate()) {

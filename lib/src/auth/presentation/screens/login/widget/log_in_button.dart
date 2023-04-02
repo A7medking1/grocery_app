@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grocery_app/src/auth/presentation/controller/auth_bloc.dart';
 import 'package:grocery_app/src/core/app_prefs/app_prefs.dart';
@@ -25,7 +27,7 @@ class SignInButton extends StatelessWidget
           showToast(state.message, ToastStates.ERROR, context);
         }
         if (state.logInState == AuthRequestState.success) {
-          showToast('SignIn Successfully', ToastStates.SUCCESS, context);
+          showToast(AppStrings.logInSuccessfully.tr(), ToastStates.SUCCESS, context);
           //print(state.user!.user!.uid);
           sl<AppPreferences>().setUserToken(state.user!.user!.uid);
           context.goNamed(Routes.homeScreen);
@@ -34,13 +36,13 @@ class SignInButton extends StatelessWidget
       builder: (context, state) {
         return !state.loading
             ? Container(
-                padding: const EdgeInsetsDirectional.symmetric(horizontal: 50),
+                padding:  EdgeInsetsDirectional.symmetric(horizontal: 50.w),
                 decoration: BoxDecoration(
                   color: AppColors.green,
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20.r),
                 ),
                 child: CustomTextButton(
-                  text: AppStrings.signIn,
+                  text: AppStrings.signIn.tr(),
                   fontColor: Colors.white,
                   onPressed: () async {
                     if (bloc.loginFormKey.currentState!.validate()) {

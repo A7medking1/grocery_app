@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app/src/auth/presentation/controller/auth_bloc.dart';
 import 'package:grocery_app/src/auth/presentation/screens/sign_up/widget/build_form_field.dart';
 import 'package:grocery_app/src/auth/presentation/screens/sign_up/widget/sign_up_button.dart';
@@ -36,45 +38,45 @@ class _SignUpScreenContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsetsDirectional.symmetric(horizontal: 20),
+      padding:  EdgeInsetsDirectional.symmetric(horizontal: 20.w),
       child: SingleChildScrollView(
         child: Form(
           key: context.read<AuthBloc>().signUpFormKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
+            children:  [
               Text(
-                AppStrings.createNewAccount,
-                style: TextStyle(fontSize: 22),
+                AppStrings.createNewAccount.tr(),
+                style: TextStyle(fontSize: 22.sp),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
               Text(
-                AppStrings.descCreateNewAccount,
-                style: TextStyle(fontSize: 18, color: Colors.grey),
+                AppStrings.descCreateNewAccount.tr(),
+                style:  TextStyle(fontSize: 18.sp, color: Colors.grey),
               ),
-              SizedBox(
-                height: 70,
+               SizedBox(
+                height: 30.h,
               ),
-              InputFieldBuild(),
-              SizedBox(
-                height: 40,
+              const InputFieldBuild(),
+               SizedBox(
+                height: 30.h,
               ),
-              SignUpButton(),
-              SizedBox(
-                height: 50,
+              const SignUpButton(),
+               SizedBox(
+                height: 30.h,
               ),
               Text(
-                AppStrings.orSignUpWith,
-                style: TextStyle(
-                  fontSize: 18,
+                AppStrings.orSignUpWith.tr(),
+                style:  TextStyle(
+                  fontSize: 18.sp,
                 ),
               ),
-              SizedBox(
-                height: 50,
+               SizedBox(
+                height: 50.sp,
               ),
-              SocialButtonsBuild()
+              const SocialButtonsBuild()
             ],
           ),
         ),

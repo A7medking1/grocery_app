@@ -2,6 +2,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grocery_app/src/core/app_prefs/app_prefs.dart';
 import 'package:grocery_app/src/core/presentation/widget/custom_text_button.dart';
@@ -33,7 +34,7 @@ class _OnBoardingScreenContent extends StatelessWidget {
       child: Column(children: [
         Container(
           width: double.infinity,
-          padding: const EdgeInsetsDirectional.only(end: 30, top: 20),
+          padding:  EdgeInsetsDirectional.only(end: 30.w, top: 20.h),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -47,8 +48,8 @@ class _OnBoardingScreenContent extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(
-          height: 120,
+         SizedBox(
+          height: 120.h,
         ),
         const Expanded(
           child: PageViewBuilder(),

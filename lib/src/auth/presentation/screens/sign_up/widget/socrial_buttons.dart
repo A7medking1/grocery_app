@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grocery_app/src/core/resources/app_assets.dart';
 import 'package:grocery_app/src/core/resources/app_colors.dart';
@@ -48,26 +50,28 @@ class SocialMediaButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       shape: RoundedRectangleBorder(
-        side: const BorderSide(color: Colors.black),
-        borderRadius: BorderRadius.circular(10),
+        side:  BorderSide(color: AppColors.black),
+        borderRadius: BorderRadius.circular(10.r),
       ),
       onPressed: onPressed,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding:  EdgeInsets.all(8.0.h),
         child: Row(
           children: [
             SvgPicture.asset(
               svgIcon,
             ),
-            const SizedBox(
-              width: 10,
+             SizedBox(
+              width: 10.w,
             ),
-            Text(
-              AppStrings.logInWith,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium!
-                  .copyWith(color: AppColors.black),
+            Expanded(
+              child: Text(
+                AppStrings.logInWith.tr(),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(color: AppColors.black),
+              ),
             ),
           ],
         ),

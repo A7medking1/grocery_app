@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class IndicatorPageView extends StatelessWidget {
   final int currentIndex;
@@ -22,8 +23,8 @@ class IndicatorPageView extends StatelessWidget {
               backgroundColor: index == currentIndex
                   ? Colors.green
                   : Colors.black.withOpacity(0.2),
-              child: const CircleAvatar(
-                radius: 8,
+              child:  CircleAvatar(
+                radius: 8.r,
                 backgroundColor: Colors.white,
               ),
             ),

@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery_app/src/auth/presentation/controller/auth_bloc.dart';
 import 'package:grocery_app/src/auth/presentation/screens/validator_form.dart';
 import 'package:grocery_app/src/core/presentation/widget/custom_text_formField.dart';
@@ -18,26 +20,26 @@ class InputFieldBuild extends StatelessWidget  with Validator{
         CustomTextFormField(
           controller: bloc.userName,
           validator: (value) => validateName(value),
-          labelText: AppStrings.name,
+          labelText: AppStrings.name.tr(),
           textInputType: TextInputType.name,
           prefixIcon: const Icon(Icons.person),
         ),
-        const SizedBox(
-          height: 30,
+         SizedBox(
+          height: 30.h,
         ),
         CustomTextFormField(
           controller: bloc.email,
-          labelText: AppStrings.email,
+          labelText: AppStrings.email.tr(),
           validator: (value)=>validateEmail(value),
           textInputType: TextInputType.emailAddress,
           prefixIcon: const Icon(Icons.email_outlined),
         ),
-        const SizedBox(
-          height: 30,
+         SizedBox(
+          height: 30.h,
         ),
         CustomTextFormField(
           controller: bloc.password,
-          labelText: AppStrings.password,
+          labelText: AppStrings.password.tr(),
           validator: (value) => validatePassword(value),
           textInputType: TextInputType.visiblePassword,
           suffixIcon: const Icon(Icons.visibility_outlined),
