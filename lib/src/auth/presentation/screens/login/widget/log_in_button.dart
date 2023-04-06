@@ -27,7 +27,7 @@ class SignInButton extends StatelessWidget
           showToast(state.message, ToastStates.ERROR, context);
         }
         if (state.logInState == AuthRequestState.success) {
-          showToast(AppStrings.logInSuccessfully.tr(), ToastStates.SUCCESS, context);
+          //showToast(AppStrings.logInSuccessfully.tr(), ToastStates.SUCCESS, context);
           //print(state.user!.user!.uid);
           sl<AppPreferences>().setUserToken(state.user!.user!.uid);
           context.goNamed(Routes.homeScreen);

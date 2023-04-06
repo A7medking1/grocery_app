@@ -26,7 +26,11 @@
   "email_valid_message" : "Please enter a valid email",
   "password_valid_message" : "Password must be at least 6 characters",
   "create_account_message" : "Create Account Successfully",
-  "log_in_successfully":"LOGIN SUCCESSFULLY"
+  "log_in_successfully":"LOGIN SUCCESSFULLY",
+  "nav_bar_title_home": "Home",
+  "nav_bar_title_heart": "Heart",
+  "nav_bar_title_user": "User",
+  "nav_bar_title_cart": "Cart"
 
 }
 

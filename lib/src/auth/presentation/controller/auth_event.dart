@@ -22,3 +22,10 @@ class SignUpEvent extends AuthEvent {
 
   const SignUpEvent(this.email, this.password);
 }
+
+class SaveUserToFireStoreEvent extends AuthEvent {
+
+  final UserModel user ;
+
+  const SaveUserToFireStoreEvent(this.user);
+}

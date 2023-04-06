@@ -26,5 +26,9 @@
   "email_valid_message": "يرجى إدخال عنوان بريد إلكتروني صحيح",
   "password_valid_message": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
   "create_account_message": "تم إنشاء الحساب بنجاح",
-  "log_in_successfully":"تم تسجيل الدخول بنجاح\n"
+  "log_in_successfully":"تم تسجيل الدخول بنجاح\n",
+  "nav_bar_title_home": "الرئيسية",
+  "nav_bar_title_heart": "المفضلة",
+  "nav_bar_title_user": "البروفايل",
+  "nav_bar_title_cart": "السلة"
 }

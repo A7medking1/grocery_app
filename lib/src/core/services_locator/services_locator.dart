@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
 import 'package:grocery_app/src/auth/data/datasource/remote_data_source.dart';
@@ -8,6 +9,8 @@ import 'package:grocery_app/src/auth/domain/use_cases/sign_up_use_case.dart';
 import 'package:grocery_app/src/auth/presentation/controller/auth_bloc.dart';
 import 'package:grocery_app/src/core/app_prefs/app_prefs.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../auth/domain/use_cases/save_user_to_fire_store.dart';
 
 final sl = GetIt.instance;
 
@@ -26,15 +29,19 @@ class ServicesLocator {
 
     sl.registerFactory(() => auth);
 
-    sl.registerFactory<AuthBloc>(() => AuthBloc(sl(), sl()));
+    sl.registerFactory<AuthBloc>(() => AuthBloc(sl(), sl(),sl()));
 
     sl.registerFactory(() => LoginUseCase(sl()));
 
     sl.registerFactory(() => SignUpUseCase(sl()));
 
+    sl.registerFactory(() => SaveUserToFireStoreUseCase(sl()));
+
     sl.registerLazySingleton<BaseRemoteAuthDataSource>(
-        () => AuthRemoteDataSource(sl()));
+        () => AuthRemoteDataSource(sl(), sl()));
 
     sl.registerLazySingleton<BaseAuthRepository>(() => AuthRepository(sl()));
+
+    sl.registerLazySingleton(() => FirebaseFirestore.instance);
   }
 }

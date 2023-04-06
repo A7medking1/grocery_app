@@ -43,7 +43,12 @@ class AppStrings {
   static const String logInSuccessfully = 'log_in_successfully';
 
 
+  /// bottom nav bar
 
+  static const String home = 'nav_bar_title_home';
+  static const String user = 'nav_bar_title_user';
+  static const String heart = 'nav_bar_title_heart';
+  static const String cart = 'nav_bar_title_cart';
 
 
 }

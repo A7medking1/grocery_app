@@ -4,7 +4,9 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:grocery_app/src/auth/data/model/user_model.dart';
 import 'package:grocery_app/src/auth/domain/use_cases/login_use_case.dart';
+import 'package:grocery_app/src/auth/domain/use_cases/save_user_to_fire_store.dart';
 
 import '../../domain/use_cases/sign_up_use_case.dart';
 
@@ -19,13 +21,19 @@ enum AuthRequestState {
 }
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  AuthBloc(this.loginUseCase, this.signUpUseCase) : super(const AuthState()) {
+  AuthBloc(
+    this.loginUseCase,
+    this.signUpUseCase,
+    this.userToFireStoreUseCase,
+  ) : super(const AuthState()) {
     on<LogInEvent>(_logIn);
     on<SignUpEvent>(_signUp);
+    on<SaveUserToFireStoreEvent>(_saveUser);
   }
 
   final LoginUseCase loginUseCase;
   final SignUpUseCase signUpUseCase;
+  final SaveUserToFireStoreUseCase userToFireStoreUseCase;
 
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
@@ -89,5 +97,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         ),
       ),
     );
+  }
+
+  FutureOr<void> _saveUser(
+      SaveUserToFireStoreEvent event, Emitter<AuthState> emit) async {
+    final result =
+        await userToFireStoreUseCase(UserParameters(userModel: event.user));
+    result.fold((l) => print('error'), (r) => print('save user'));
   }
 }

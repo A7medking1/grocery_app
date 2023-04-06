@@ -23,6 +23,7 @@ void main() async {
   runApp(
     EasyLocalization(
       supportedLocales: const [arabicLocal, englishLocal],
+      fallbackLocale: englishLocal,
       path: assetsLocalization,
       child: Phoenix(
         child: const MyApp(),
@@ -43,7 +44,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void didChangeDependencies() {
-    _appPreferences.getLocal().then((local) => context.setLocale(local));
+    _appPreferences.getLocal().then((local) =>  context.setLocale(local));
     super.didChangeDependencies();
   }
 

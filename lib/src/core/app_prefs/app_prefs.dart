@@ -49,7 +49,6 @@ class AppPreferences {
     if (lang != null && lang.isNotEmpty) {
       return lang;
     } else {
-      // default language
       return LanguageType.english.getValue();
     }
   }
@@ -58,11 +57,9 @@ class AppPreferences {
     String currentLang = await getAppLang();
 
     if (currentLang == LanguageType.arabic.getValue()) {
-      // set english
-      _sharedPreferences.setString(language, LanguageType.english.getValue());
+      await _sharedPreferences.setString(language, LanguageType.english.getValue());
     } else {
-      // set arabic
-      _sharedPreferences.setString(language, LanguageType.arabic.getValue());
+      await _sharedPreferences.setString(language, LanguageType.arabic.getValue());
     }
   }
 

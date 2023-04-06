@@ -1,14 +1,15 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:grocery_app/src/core/resources/app_strings.dart';
 
 mixin Validator {
   // Email validation
   String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
-      return AppStrings.emailRequired;
+      return AppStrings.emailRequired.tr();
     } else if (!RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
         .hasMatch(value)) {
-      return AppStrings.emailValidMessage;
+      return AppStrings.emailValidMessage.tr();
     }
     return null;
   }
@@ -16,9 +17,9 @@ mixin Validator {
   // Password validation
   String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return AppStrings.passwordRequired;
+      return AppStrings.passwordRequired.tr();
     } else if (value.length < 6) {
-      return AppStrings.passwordValidMessage;
+      return AppStrings.passwordValidMessage.tr();
     }
     return null;
   }
@@ -36,7 +37,7 @@ mixin Validator {
   // Name validation
   String? validateName(String? value) {
     if (value == null || value.isEmpty) {
-      return AppStrings.nameRequired;
+      return AppStrings.nameRequired.tr();
     }
     return null;
   }

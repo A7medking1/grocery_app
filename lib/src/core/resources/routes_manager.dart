@@ -3,7 +3,7 @@ import 'package:grocery_app/src/auth/presentation/screens/login/login_screen.dar
 import 'package:grocery_app/src/auth/presentation/screens/sign_up/sign_up_screen.dart';
 import 'package:grocery_app/src/core/presentation/screen/main_home_screen.dart';
 import 'package:grocery_app/src/on_boarding/presentation/screen/on_boarding_screen.dart';
-import 'package:grocery_app/src/on_boarding/splash_screen.dart';
+import 'package:grocery_app/src/splash/splash_screen.dart';
 import 'package:grocery_app/test.dart';
 
 class Routes {
@@ -57,7 +57,7 @@ class AppRouter {
       GoRoute(
         name: Routes.homeScreen,
         path: RouterPath.homeScreen,
-        builder: (context, state) => const HomeScreen(),
+        builder: (context, state) => const AppLayOutScreen(),
       ),
     ],
   );
