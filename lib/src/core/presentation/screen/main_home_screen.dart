@@ -32,7 +32,7 @@ class _AppLayOutScreenState extends State<AppLayOutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+   /*   appBar: AppBar(
         actions: [
           IconButton(
               onPressed: () => sl<AppPreferences>().removeUserToken(),
@@ -44,7 +44,7 @@ class _AppLayOutScreenState extends State<AppLayOutScreen> {
               },
               icon: const Icon(Icons.change_circle_outlined)),
         ],
-      ),
+      ),*/
       body: screens[currentIndex],
       bottomNavigationBar: _bottomNavBar(),
     );

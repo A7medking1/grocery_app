@@ -3,22 +3,23 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocery_app/firebase_options.dart';
 import 'package:grocery_app/src/core/app_prefs/app_prefs.dart';
 import 'package:grocery_app/src/core/resources/app_theme.dart';
 import 'package:grocery_app/src/core/resources/language_manager.dart';
 import 'package:grocery_app/src/core/resources/routes_manager.dart';
 import 'package:grocery_app/src/core/services_locator/services_locator.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
-  await EasyLocalization.ensureInitialized();
-  await ServicesLocator().init();
+  await Future.wait([
+    EasyLocalization.ensureInitialized(),
+    Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    ),
+    ServicesLocator().init(),
+  ]);
 
   runApp(
     EasyLocalization(
@@ -44,16 +45,16 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void didChangeDependencies() {
-    _appPreferences.getLocal().then((local) =>  context.setLocale(local));
+    _appPreferences.getLocal().then((local) => context.setLocale(local));
     super.didChangeDependencies();
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext _) {
     return ScreenUtilInit(
       designSize: const Size(400, 700),
       minTextAdapt: true,
-      builder: (BuildContext context, Widget? child) {
+      builder: (BuildContext _, Widget? child) {
         return MaterialApp.router(
           debugShowCheckedModeBanner: false,
           localizationsDelegates: context.localizationDelegates,

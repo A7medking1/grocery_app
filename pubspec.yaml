@@ -30,6 +30,8 @@ dependencies:
   flutter_screenutil: ^5.7.0
   easy_localization: ^3.0.1
   flutter_phoenix: ^1.1.1
+  cached_network_image: ^3.2.3
+  shimmer: ^2.0.0
 
 dev_dependencies:
   flutter_test:

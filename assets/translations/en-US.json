@@ -30,8 +30,19 @@
   "nav_bar_title_home": "Home",
   "nav_bar_title_heart": "Heart",
   "nav_bar_title_user": "User",
-  "nav_bar_title_cart": "Cart"
-
+  "nav_bar_title_cart": "Cart",
+  "my_order": "My order",
+  "favorites": "Favorites",
+  "settings": "settings",
+  "rate_us":"Rate us",
+  "log_out": "Log Out",
+  "help": "Help",
+  "change_language": "Change Language",
+  "account": "Account",
+  "notifications": "Notifications",
+  "language": "Language",
+  "body_home": "Find Fresh Grocery Product",
+  "search_for_products": "search for products"
 }
 
 

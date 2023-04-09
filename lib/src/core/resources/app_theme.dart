@@ -15,18 +15,20 @@ ThemeData getAppTheme() {
     textTheme: TextTheme(
       displayLarge:
           getSemiBoldStyle(color: AppColors.darkGrey, fontSize: FontSize.s22),
+      displayMedium: getRegularStyle(color: AppColors.darkGrey, fontSize: FontSize.s20),
       headlineLarge:
           getSemiBoldStyle(color: AppColors.darkGrey, fontSize: FontSize.s22),
       headlineMedium:
           getRegularStyle(color: AppColors.darkGrey, fontSize: FontSize.s18),
       titleMedium:
-          getMediumStyle(color: AppColors.green, fontSize: FontSize.s16),
+          getMediumStyle(color: AppColors.black, fontSize: FontSize.s20),
+      titleLarge:  getSemiBoldStyle(color: AppColors.darkGrey, fontSize: FontSize.s24),
       titleSmall:
           getRegularStyle(color: AppColors.white, fontSize: FontSize.s16),
       bodyLarge: getRegularStyle(color: AppColors.grey1),
       bodySmall: getRegularStyle(color: AppColors.grey),
       bodyMedium:
-          getRegularStyle(color: AppColors.grey2, fontSize: FontSize.s12),
+          getRegularStyle(color: AppColors.grey2, fontSize: FontSize.s20),
       labelSmall: getBoldStyle(
         color: AppColors.green,
         fontSize: FontSize.s12,

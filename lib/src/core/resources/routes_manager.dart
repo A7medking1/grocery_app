@@ -1,4 +1,6 @@
 import 'package:go_router/go_router.dart';
+import 'package:grocery_app/src/app/presentation/screens/settings_screen/screens/language_screen.dart';
+import 'package:grocery_app/src/app/presentation/screens/settings_screen/settings_screen.dart';
 import 'package:grocery_app/src/auth/presentation/screens/login/login_screen.dart';
 import 'package:grocery_app/src/auth/presentation/screens/sign_up/sign_up_screen.dart';
 import 'package:grocery_app/src/core/presentation/screen/main_home_screen.dart';
@@ -7,26 +9,33 @@ import 'package:grocery_app/src/splash/splash_screen.dart';
 import 'package:grocery_app/test.dart';
 
 class Routes {
+  Routes._();
   static const splash = '/';
   static const onBoarding = 'onBoarding';
   static const login = 'login';
   static const signUp = 'signUp';
   static const test = 'test';
   static const homeScreen = 'homeScreen';
+  static const setting = 'setting';
+  static const language = 'language';
 }
 
 class RouterPath {
+  RouterPath._();
   static const splash = '/';
   static const onBoarding = '/onBoarding';
   static const login = '/login';
   static const signUp = 'signUp';
   static const test = '/test';
   static const homeScreen = '/homeScreen';
+  static const setting = '/setting';
+  static const language = '/language';
+
 }
 
 class AppRouter {
   GoRouter router = GoRouter(
-    initialLocation: RouterPath.splash,
+  //  initialLocation: RouterPath.splash,
     routes: [
       GoRoute(
         name: Routes.splash,
@@ -58,6 +67,16 @@ class AppRouter {
         name: Routes.homeScreen,
         path: RouterPath.homeScreen,
         builder: (context, state) => const AppLayOutScreen(),
+      ),
+      GoRoute(
+        name: Routes.setting,
+        path: RouterPath.setting,
+        builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        name: Routes.language,
+        path: RouterPath.language,
+        builder: (context, state) => const LanguageScreen(),
       ),
     ],
   );

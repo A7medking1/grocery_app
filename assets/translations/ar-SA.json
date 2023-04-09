@@ -30,5 +30,19 @@
   "nav_bar_title_home": "الرئيسية",
   "nav_bar_title_heart": "المفضلة",
   "nav_bar_title_user": "البروفايل",
-  "nav_bar_title_cart": "السلة"
+  "nav_bar_title_cart": "السلة",
+  "my_order": "طلبي",
+  "favorites": "المفضلة",
+  "settings": "الإعدادات",
+  "rate_us": "قيّمنا",
+  "log_out": "تسجيل الخروج",
+  "help": "المساعدة",
+  "change_language": "تغيير اللغة",
+  "account": "الحساب",
+  "notifications": "الإشعارات",
+  "language": "اللغة",
+  "body_home": "العثور على منتجات طازجة",
+  "search_for_products": "البحث عن المنتجات"
+
+
 }

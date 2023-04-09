@@ -51,4 +51,23 @@ class AppStrings {
   static const String cart = 'nav_bar_title_cart';
 
 
+  ///
+
+  static const String myOrder = 'my_order';
+  static const String favorites = 'favorites';
+  static const String settings = 'settings';
+  static const String logOut = 'log_out';
+  static const String rateUs = 'rate_us';
+  static const String help = 'help';
+  static const String changeLang = 'change_language';
+  static const String account = 'account';
+  static const String notifications = 'notifications';
+  static const String language = 'language';
+
+
+  /// home
+
+ static const String bodyHome = 'body_home';
+ static const String searchForProduct = 'search_for_products';
+
 }
